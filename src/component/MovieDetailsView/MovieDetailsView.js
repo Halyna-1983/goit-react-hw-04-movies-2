@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from "react-router-dom";
 import Api from "../../services/movies-Api";
 import InfoContainer from "../InfoContainer";
+import Routes from "../../Routes";
 
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -29,7 +30,8 @@ async componentDidMount() {
 }
 
 handleGoBack = () => {
-    // history.push(location)
+    const {history, location} = this.props;
+    history.push(location?.state?.from || Routes.movies )
 }
 
     render() { 
@@ -38,7 +40,7 @@ handleGoBack = () => {
         return ( 
             <>
             <div>
-                <button type="button">go back</button>
+                <button type="button" onClick={this.handleGoBack}>go back</button>
 
                 <h2>{title}</h2>
                 <img src={`${IMG_URL}/${backdrop_path||poster_path}`} alt={`Poster of ${title}`} />

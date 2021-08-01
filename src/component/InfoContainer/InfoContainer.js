@@ -34,11 +34,11 @@ class InfoContainer extends Component {
                     }
                 } /> }
 
-                <Route path={`${match.url}/reviews`} render = {
+                {reviews && <Route path={`${match.url}/reviews`} render = {
                     () => {
                         return <Reviews reviews={ reviews } />
                     }
-                } /> 
+                } /> }
             </div>
             </>
         );
