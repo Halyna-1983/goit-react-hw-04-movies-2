@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import AppBar from './component/AppBar';
 import MoviesView from "./views/MoviesView/MoviesView";
-import MoviesDetailsView from "./views/MovieDetailsView";
+import MoviesDetailsView from "./component/MovieDetailsView";
 import SearchView from "./views/SearchView/SearchView";
 import Routes from "./Routes";
 
