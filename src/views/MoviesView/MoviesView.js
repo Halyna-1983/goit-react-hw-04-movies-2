@@ -9,8 +9,8 @@ class MoviesView extends Component {
 		movies: [],
 	}
 	
-	async componentDidMount(id) {
-		const movies = await Api.fetchMovies(id)
+	async componentDidMount() {
+		const movies = await Api.fetchMovies()
 
 		this.setState({ movies });
 		
@@ -20,7 +20,7 @@ class MoviesView extends Component {
 		return (
 			<div>
 				<h1>Trending today</h1>
-				<MoviesList movies={ this.state.movies}/>
+				<MoviesList movies={this.state.movies}/>
 			</div>
 		 );
 	}
