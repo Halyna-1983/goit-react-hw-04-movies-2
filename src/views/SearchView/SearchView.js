@@ -24,12 +24,13 @@ class SearchView extends Component {
 
      onChangeQuery = query => {
      this.setState({ searchQuery: query });
+
      this.props.history.push({
-         pathname: this.props.location.pathname,
+         pathname: this.props.location.search,
          search: `query=${query}`,
-         state: {searchQuery: query}
-    })
-    }
+         state: {searchQuery: query},
+    });
+    };
 
      fetchMovie = async() => {
          const movies = await Api.searchMovies(this.state.searchQuery)
