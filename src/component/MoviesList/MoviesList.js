@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import MoviePreview from "../../views/MoviePreview";
 
 const MoviesList = ({movies, location}) => {
@@ -23,4 +23,4 @@ const MoviesList = ({movies, location}) => {
     );
 }
  
-export default MoviesList;
+export default withRouter(MoviesList);

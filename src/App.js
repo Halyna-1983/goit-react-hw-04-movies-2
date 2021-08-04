@@ -1,5 +1,5 @@
 import React, {Suspense, lazy} from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import AppBar from './component/AppBar';
 // import MoviesView from "./views/MoviesView/MoviesView";
 // import MoviesDetailsView from "./component/MovieDetailsView";
@@ -21,10 +21,11 @@ const App = () => {
       <Suspense fallback={<h1>...loading</h1>}>
 
       <Switch>
-        <Route exact path={Routes.home} component={MoviesView} />
+        {/* <Route exact path={Routes.home} component={MoviesView} /> */}
         <Route exact path={Routes.movies} component={MoviesView}/>
         <Route path={Routes.search} component={SearchView}/>
         <Route path={Routes.movieDetails} component={MoviesDetailsView}/>
+        <Redirect to={Routes.home} />
       </Switch>
       
     </Suspense>
